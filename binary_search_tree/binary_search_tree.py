@@ -52,8 +52,17 @@ class BinarySearchTree:
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
-        pass
+        """
+        there is a call back in the test which appends each value to an array, we want to 
+        call this cb on each node in the binary search tree with a recursive approach
+        """
+        # if there is a self.value, append it to the arr with the cb
 
+        cb(self.value)
+        if self.right:
+            self.right.for_each(cb)
+        if self.left:
+            self.left.for_each(cb)
     # DAY 2 Project -----------------------
 
     # Print all the values in order from low to high
@@ -81,3 +90,4 @@ class BinarySearchTree:
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         pass
+
